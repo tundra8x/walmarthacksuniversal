@@ -86,10 +86,6 @@ fpsLabel.AnchorPoint = Vector2.new(0.5,0.5)
 fpsLabel.Size = UDim2.new(0.957, 0,0.197, 0)
 fpsLabel.Font = Enum.Font.Code
 fpsLabel.BackgroundTransparency = 1
-while true do
-	fpsLabel.Text = "FPS: "..fps
-	wait()
-end
 fpsLabel.TextColor3 = Color3.fromRGB(222, 222, 222)
 fpsLabel.TextScaled = true
 fpsLabel.TextTransparency = 0
@@ -107,10 +103,6 @@ pingLabel.AnchorPoint = Vector2.new(0.5,0.5)
 pingLabel.Size = UDim2.new(0.957, 0,0.197, 0)
 pingLabel.Font = Enum.Font.Code
 pingLabel.BackgroundTransparency = 1
-while true do
-	pingLabel.Text = "PING: "..player:GetNetworkPing()
-	wait()
-end
 pingLabel.TextColor3 = Color3.fromRGB(222, 222, 222)
 pingLabel.TextScaled = true
 pingLabel.TextTransparency = 0
@@ -128,10 +120,6 @@ objectsLabel.AnchorPoint = Vector2.new(0.5,0.5)
 objectsLabel.Size = UDim2.new(0.957, 0,0.197, 0)
 objectsLabel.Font = Enum.Font.Code
 objectsLabel.BackgroundTransparency = 1
-while true do
-	objectsLabel.Text = "OBJECTS: "..#workspace:GetDescendants()
-	wait()
-end
 objectsLabel.TextColor3 = Color3.fromRGB(222, 222, 222)
 objectsLabel.TextScaled = true
 objectsLabel.TextTransparency = 0
@@ -157,3 +145,10 @@ textLabel_Main.Parent = mainFrame
 uistroke_mainframe.Parent = mainFrame
 mainFrame.Parent = debuggui
 debuggui.Parent = player.PlayerGui
+
+while true do
+	fpsLabel.Text = "FPS: "..fps
+	objectsLabel.Text = "OBJECTS: "..#workspace:GetDescendants()
+	pingLabel.Text = "PING: "..player:GetNetworkPing()
+	wait()
+end
